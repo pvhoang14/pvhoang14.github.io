@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viet Hoang Pham | PhD Student @ NTU</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts: Roboto and Lato -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons: FontAwesome & Academicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#475569', // Slate 600
+                            dark: '#334155',    // Slate 700
+                            light: '#94a3b8'    // Slate 400
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        heading: ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col md:flex-row">
+
+    <!-- Mobile Header (Visible only on small screens) -->
+    <header class="md:hidden bg-white shadow-sm p-4 sticky top-0 z-50 flex justify-between items-center">
+        <div class="font-heading font-bold text-xl text-gray-900">Viet Hoang Pham</div>
+        <button id="mobile-menu-btn" class="text-gray-600 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </header>
+
+    <!-- Sidebar / Navigation -->
+    <aside id="sidebar"
+        class="bg-white w-full md:w-[280px] md:h-screen md:fixed md:top-0 md:left-0 border-r border-gray-200 flex flex-col justify-between hidden md:flex z-40 transition-all duration-300">
+        <!-- Top Section: Profile -->
+        <div class="p-8 flex flex-col items-center text-center">
+            <!-- Profile Picture Placeholder - Replace src with actual image -->
+            <div class="w-32 h-32 rounded-lg overflow-hidden shadow-md mb-4 bg-gray-200 relative">
+                <!-- Updated avatar background color to match theme -->
+                <img src="https://ui-avatars.com/api/?name=Viet+Hoang+Pham&background=475569&color=fff&size=256"
+                    alt="Viet Hoang Pham" class="w-full h-full object-cover"
+                    onerror="this.src='https://via.placeholder.com/150?text=VHP'">
+            </div>
+
+            <h1 class="text-2xl font-heading font-bold text-gray-900 mb-1">Viet Hoang Pham</h1>
+            <p class="text-sm font-medium text-brand mb-4">PhD Student @ NTU</p>
+
+            <div class="flex space-x-3 text-gray-500 mb-6">
+                <a href="mailto:viethoangpham.contact@gmail.com" class="hover:text-brand transition"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="#" class="hover:text-brand transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-brand transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-brand transition"><i class="fab fa-github"></i></a>
+                <a href="#" class="hover:text-brand transition"><i class="ai ai-google-scholar text-lg"></i></a>
+            </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex-grow px-4 overflow-y-auto">
+            <ul class="space-y-1">
+                <li><a href="#home"
+                        class="nav-item block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent active"
+                        onclick="navigate('home')">Home</a></li>
+                <li><a href="#publications"
+                        class="nav-item block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent"
+                        onclick="navigate('publications')">Publications</a></li>
+                <li><a href="#research"
+                        class="nav-item block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent"
+                        onclick="navigate('research')">Research & Projects</a></li>
+                <li><a href="#experience"
+                        class="nav-item block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent"
+                        onclick="navigate('experience')">Experience & CV</a></li>
+                <li><a href="#teaching"
+                        class="nav-item block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent"
+                        onclick="navigate('teaching')">Teaching & Service</a></li>
+                <li><a href="#misc"
+                        class="nav-item block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent"
+                        onclick="navigate('misc')">Misc</a></li>
+            </ul>
+        </nav>
+
+        <!-- Footer Contact Info -->
+        <div class="p-6 border-t border-gray-100 text-xs text-gray-500">
+            <p><i class="fas fa-map-marker-alt mr-1"></i> Nanyang Technological University, Singapore</p>
+            <p class="mt-2">© 2026 Viet Hoang Pham</p>
+        </div>
+    </aside>
+
+    <!-- Overlay for mobile menu -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden md:hidden" onclick="toggleMenu()"></div>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 md:ml-[280px] min-h-screen">
+
+        <!-- SECTION: HOME -->
+        <section id="home" class="page-section p-6 md:p-12 lg:p-16 max-w-5xl mx-auto fade-in">
+            <!-- Intro -->
+            <div class="mb-12">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6">Hello, I'm <span
+                        class="text-brand">Viet Hoang</span>.</h2>
+                <p class="text-xl md:text-2xl text-gray-600 leading-relaxed font-light mb-8">
+                    I am a PhD student in Computer Science at <strong class="font-bold text-gray-800">Nanyang
+                        Technological University (NTU)</strong>, Singapore, advised by Prof. [Advisor Name].
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    My research focuses on building <strong>trustworthy and interpretable NLP systems</strong>. I am
+                    particularly interested in addressing challenges in Large Language Models (LLMs) related to:
+                </p>
+                <ul class="list-none flex flex-wrap gap-3 mb-8">
+                    <li
+                        class="px-4 py-2 bg-slate-100 text-brand rounded-full text-sm font-semibold border border-slate-200">
+                        Natural Language Processing</li>
+                    <li
+                        class="px-4 py-2 bg-slate-100 text-brand rounded-full text-sm font-semibold border border-slate-200">
+                        Fact-Checking & Verification</li>
+                    <li
+                        class="px-4 py-2 bg-slate-100 text-brand rounded-full text-sm font-semibold border border-slate-200">
+                        Neuro-Symbolic Reasoning</li>
+                    <li
+                        class="px-4 py-2 bg-slate-100 text-brand rounded-full text-sm font-semibold border border-slate-200">
+                        LLM Agents</li>
+                </ul>
+
+                <div class="flex gap-4">
+                    <a href="#publications" onclick="navigate('publications')"
+                        class="px-6 py-3 bg-brand text-white font-bold rounded-lg hover:bg-brand-dark transition shadow-sm hover:shadow-md">
+                        View Publications
+                    </a>
+                    <a href="#experience" onclick="navigate('experience')"
+                        class="px-6 py-3 bg-white text-gray-800 font-bold rounded-lg border border-gray-300 hover:bg-gray-50 transition shadow-sm">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Selected Publications (Left 2/3) -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-2xl font-heading font-bold text-gray-800 mb-6 border-b pb-2">Selected Publications
+                    </h3>
+                    <div class="space-y-6">
+
+                        <!-- Paper 1 -->
+                        <div class="group">
+                            <h4
+                                class="text-lg font-bold text-gray-900 group-hover:text-brand transition cursor-pointer">
+                                <a href="#">ClaimPKG: Enhancing Claim Verification via Pseudo-Subgraph Generation with
+                                    Lightweight Specialized LLM</a>
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">
+                                <strong>Hoang Pham*</strong>, Thanh-Do Nguyen*, Khac-Hoai Nam Bui
+                            </p>
+                            <p class="text-gray-500 text-sm italic mt-1">Findings of ACL 2025 (CORE A*)</p>
+                            <div class="flex gap-3 mt-2 text-xs font-semibold">
+                                <a href="#" class="text-brand hover:underline">[PDF]</a>
+                                <a href="#" class="text-gray-600 hover:text-gray-900 hover:underline">[Code]</a>
+                            </div>
+                        </div>
+
+                        <!-- Paper 2 -->
+                        <div class="group">
+                            <h4
+                                class="text-lg font-bold text-gray-900 group-hover:text-brand transition cursor-pointer">
+                                <a href="#">Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim
+                                    Verification</a>
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">
+                                <strong>Hoang Pham</strong>, Thanh-Do Nguyen, Khac-Hoai Nam Bui
+                            </p>
+                            <p class="text-gray-500 text-sm italic mt-1">NAACL 2025 (CORE A)</p>
+                            <div class="flex gap-3 mt-2 text-xs font-semibold">
+                                <a href="#" class="text-brand hover:underline">[PDF]</a>
+                                <a href="#" class="text-gray-600 hover:text-gray-900 hover:underline">[Code]</a>
+                            </div>
+                        </div>
+
+                        <!-- Paper 3 -->
+                        <div class="group">
+                            <h4
+                                class="text-lg font-bold text-gray-900 group-hover:text-brand transition cursor-pointer">
+                                <a href="#">Spec-TOD: A Specialized Instruction-Tuned LLM Framework for Efficient
+                                    Task-Oriented Dialogue Systems</a>
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">
+                                Quang Vinh Nguyen, Quang-Chieu Nguyen, <strong>Hoang Pham</strong>, Khac-Hoai Nam Bui
+                            </p>
+                            <p class="text-gray-500 text-sm italic mt-1">SIGDIAL 2025</p>
+                            <div class="flex gap-3 mt-2 text-xs font-semibold">
+                                <a href="#" class="text-brand hover:underline">[PDF]</a>
+                                <a href="#" class="text-gray-600 hover:text-gray-900 hover:underline">[Code]</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mt-6">
+                        <a href="#publications" onclick="navigate('publications')"
+                            class="text-sm font-bold text-brand hover:text-brand-dark flex items-center">
+                            See all publications <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News (Right 1/3) -->
+                <div class="lg:col-span-1">
+                    <h3 class="text-2xl font-heading font-bold text-gray-800 mb-6 border-b pb-2">News</h3>
+                    <div class="relative pl-4 border-l-2 border-gray-200 space-y-6" id="news-container">
+                        <!-- News items -->
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-brand ring-4 ring-white"></span>
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wide">Jan 2026</p>
+                            <p class="text-sm text-gray-700 mt-1">Started PhD at Nanyang Technological University (NTU),
+                                Singapore! 🇸🇬</p>
+                        </div>
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 ring-4 ring-white"></span>
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wide">May 2025</p>
+                            <p class="text-sm text-gray-700 mt-1">Paper accepted to <strong>ACL 2025 Findings</strong>.
+                                See you in Vienna!</p>
+                        </div>
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 ring-4 ring-white"></span>
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wide">Mar 2025</p>
+                            <p class="text-sm text-gray-700 mt-1">Paper accepted to <strong>NAACL 2025</strong> (Main
+                                Conference).</p>
+                        </div>
+                        <!-- Hidden Items -->
+                        <div class="relative hidden news-hidden">
+                            <span
+                                class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 ring-4 ring-white"></span>
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wide">Nov 2023</p>
+                            <p class="text-sm text-gray-700 mt-1">Joined Viettel AI as an AI Researcher.</p>
+                        </div>
+                    </div>
+                    <button id="news-toggle" onclick="toggleNews()"
+                        class="mt-4 text-xs font-bold text-gray-500 hover:text-brand focus:outline-none">
+                        Show More
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PUBLICATIONS -->
+        <section id="publications" class="page-section hidden p-6 md:p-12 lg:p-16 max-w-5xl mx-auto fade-in">
+            <h2 class="text-3xl font-heading font-bold text-gray-900 mb-2">Publications</h2>
+            <p class="text-gray-600 mb-8">Full bibliography of my academic work.</p>
+
+            <!-- Filters -->
+            <div class="flex flex-wrap gap-2 mb-8">
+                <button
+                    class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-brand text-white shadow-sm transition"
+                    data-filter="all" onclick="filterPubs('all', this)">All</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition"
+                    data-filter="NLP" onclick="filterPubs('NLP', this)">NLP</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition"
+                    data-filter="Graph" onclick="filterPubs('Graph', this)">Knowledge Graphs</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition"
+                    data-filter="Agent" onclick="filterPubs('Agent', this)">Agents</button>
+            </div>
+
+            <div id="publications-list" class="space-y-8">
+                <!-- Javascript will inject content here -->
+            </div>
+        </section>
+
+        <!-- SECTION: RESEARCH -->
+        <section id="research" class="page-section hidden p-6 md:p-12 lg:p-16 max-w-5xl mx-auto fade-in">
+            <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Research & Projects</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Project Card 1 -->
+                <div
+                    class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition group">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                        <!-- Placeholder Pattern -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
+                        <i
+                            class="fas fa-project-diagram text-4xl text-gray-300 group-hover:scale-110 transition duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-gray-900">Fact-Check Agents</h3>
+                            <span class="text-xs font-bold px-2 py-1 bg-blue-50 text-blue-600 rounded">NLP</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Developing agent-based frameworks that utilize knowledge graphs to verify complex claims
+                            with higher interpretability and accuracy.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="#"
+                                class="text-xs font-bold text-brand border border-brand px-3 py-1 rounded hover:bg-brand hover:text-white transition">Demo</a>
+                            <a href="#"
+                                class="text-xs font-bold text-gray-600 border border-gray-300 px-3 py-1 rounded hover:bg-gray-800 hover:text-white transition"><i
+                                    class="fab fa-github mr-1"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div
+                    class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition group">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
+                        <i
+                            class="fas fa-brain text-4xl text-gray-300 group-hover:scale-110 transition duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-gray-900">LLM Continual Learning</h3>
+                            <span class="text-xs font-bold px-2 py-1 bg-green-50 text-green-600 rounded">Systems</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Investigating methods for continual learning and task retrieval to prevent catastrophic
+                            forgetting in fine-tuned Large Language Models.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="#"
+                                class="text-xs font-bold text-gray-600 border border-gray-300 px-3 py-1 rounded hover:bg-gray-800 hover:text-white transition"><i
+                                    class="fab fa-github mr-1"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Open Source & Datasets</h3>
+            <div class="bg-white rounded-lg border border-gray-200 p-6">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-database mt-1 text-brand mr-3"></i>
+                        <div>
+                            <strong class="text-gray-800">FactCheck-Bench</strong>
+                            <p class="text-sm text-gray-600">Released a benchmark dataset for hallucination detection in
+                                low-resource languages.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-code-branch mt-1 text-brand mr-3"></i>
+                        <div>
+                            <strong class="text-gray-800">Awesome-LLM-Agents</strong>
+                            <p class="text-sm text-gray-600">Maintainer of a curated list of papers regarding Agentic
+                                workflows in LLMs (1.2k Stars).</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: EXPERIENCE -->
+        <section id="experience" class="page-section hidden p-6 md:p-12 lg:p-16 max-w-5xl mx-auto fade-in">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-heading font-bold text-gray-900">Experience</h2>
+                <a href="#" class="flex items-center text-brand font-bold text-sm hover:underline">
+                    <i class="fas fa-file-pdf mr-2"></i> Download CV
+                </a>
+            </div>
+
+            <div class="space-y-10">
+                <!-- Education -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <span class="bg-gray-100 p-2 rounded mr-3"><i
+                                class="fas fa-graduation-cap text-gray-600"></i></span> Education
+                    </h3>
+                    <div class="border-l-2 border-gray-200 ml-5 pl-8 space-y-8">
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-white bg-brand"></span>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                <h4 class="text-lg font-bold text-gray-900">Nanyang Technological University (NTU)</h4>
+                                <span class="text-sm font-medium text-gray-500">Jan 2026 - Present</span>
+                            </div>
+                            <p class="text-gray-700 italic">PhD Student in Computer Science</p>
+                            <p class="text-sm text-gray-600 mt-1">Research focus: Trustworthy LLMs, Neuro-symbolic AI.
+                            </p>
+                        </div>
+
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-400"></span>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                <h4 class="text-lg font-bold text-gray-900">Hanoi University of Science and Technology
+                                    (HUST)</h4>
+                                <span class="text-sm font-medium text-gray-500">Sep 2020 - Sep 2024</span>
+                            </div>
+                            <p class="text-gray-700 italic">B.Sc. in Computer Science</p>
+                            <p class="text-sm text-gray-600 mt-1">GPA: 3.75/4.0 (Top 5% of Major). Excellent Student
+                                Award.</p>
+                            <p class="text-sm text-gray-600">Thesis: Continual Learning and Task Retrieval for
+                                Fine-tuning LLMs (9.3/10.0).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <span class="bg-gray-100 p-2 rounded mr-3"><i class="fas fa-briefcase text-gray-600"></i></span>
+                        Industry Experience
+                    </h3>
+                    <div class="border-l-2 border-gray-200 ml-5 pl-8 space-y-8">
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-600"></span>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                <h4 class="text-lg font-bold text-gray-900">Viettel AI</h4>
+                                <span class="text-sm font-medium text-gray-500">Nov 2023 - Present</span>
+                            </div>
+                            <p class="text-gray-700 italic">Artificial Intelligence Researcher</p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Conducted research on reliable, interpretable frameworks integrating LLMs with
+                                    Knowledge Graphs.</li>
+                                <li>Spearheaded pre-training and fine-tuning of Vietnamese LLMs (7B to 70B parameters).
+                                </li>
+                                <li>Developed RAG pipelines for internal enterprise deployment.</li>
+                            </ul>
+                        </div>
+
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-400"></span>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                <h4 class="text-lg font-bold text-gray-900">Viettel Group</h4>
+                                <span class="text-sm font-medium text-gray-500">Apr 2023 - Nov 2023</span>
+                            </div>
+                            <p class="text-gray-700 italic">Viettel Digital Talent Residency</p>
+                            <p class="text-sm text-gray-600 mt-1">Intensive training in Data Science & AI. Awarded
+                                "Talent Ambassador" (Top 10 Finalist).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: TEACHING -->
+        <section id="teaching" class="page-section hidden p-6 md:p-12 lg:p-16 max-w-5xl mx-auto fade-in">
+            <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Teaching & Service</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Teaching Assistant</h3>
+                    <ul class="space-y-3">
+                        <li class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                            <div class="flex justify-between">
+                                <span class="font-bold text-gray-900">CZ4045: NLP</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Fall
+                                    2026</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">Nanyang Technological University</p>
+                        </li>
+                        <li class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                            <div class="flex justify-between">
+                                <span class="font-bold text-gray-900">Intro to AI</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded">Spring
+                                    2026</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">Nanyang Technological University</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Academic Service</h3>
+                    <div class="bg-white border border-gray-200 p-5 rounded-lg shadow-sm">
+                        <p class="font-bold text-gray-700 mb-2">Conference Reviewer</p>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                            <li>ACL 2026 (Arr)</li>
+                            <li>NeurIPS 2026</li>
+                            <li>EMNLP 2025</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 p-5 rounded-lg shadow-sm mt-4">
+                        <p class="font-bold text-gray-700 mb-2">Tutorials & Talks</p>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                            <li>"RAG vs Long Context Windows" - Viettel AI Seminar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: MISC -->
+        <section id="misc" class="page-section hidden p-6 md:p-12 lg:p-16 max-w-5xl mx-auto fade-in">
+            <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Misc</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Hobbies -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Hobbies</h3>
+                    <div class="prose text-gray-600">
+                        <p class="mb-4">When I'm not training models, I enjoy:</p>
+                        <ul class="list-none space-y-2">
+                            <li><i class="fas fa-camera text-brand w-6"></i> Photography (Street & Landscape)</li>
+                            <li><i class="fas fa-running text-brand w-6"></i> Running</li>
+                            <li><i class="fas fa-gamepad text-brand w-6"></i> Gaming (Strategy & RPGs)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Reading -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Currently Reading</h3>
+                    <div class="flex items-start bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-900">The Master Algorithm</h4>
+                            <p class="text-sm text-gray-500 italic">Pedro Domingos</p>
+                            <p class="text-xs text-gray-400 mt-2">Added Jan 2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Travel/Map Placeholder -->
+                <div class="md:col-span-2 mt-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Travel</h3>
+                    <div
+                        class="w-full h-64 bg-gray-100 rounded-xl flex flex-col items-center justify-center text-gray-400 border border-gray-200">
+                        <i class="fas fa-map-marked-alt text-4xl mb-2"></i>
+                        <p>Conference Travel Map Placeholder</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript logic for Data and Interactions -->
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
