@@ -62,7 +62,6 @@ function navigate(sectionId) {
     const target = document.getElementById(sectionId);
     if (target) {
         target.classList.remove('hidden');
-        target.classList.add('fade-in');
     }
 
     document.querySelectorAll('.nav-item').forEach(item => {
@@ -469,14 +468,12 @@ function toggleNews() {
         // Show all hidden items
         hiddenItems.forEach(item => {
             item.classList.remove('hidden');
-            item.classList.add('fade-in');
         });
         btn.innerText = "Show Less";
     } else {
         // Hide items that were initially hidden
         hiddenItems.forEach(item => {
             item.classList.add('hidden');
-            item.classList.remove('fade-in');
         });
         btn.innerText = "Show More";
     }

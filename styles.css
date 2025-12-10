@@ -69,3 +69,16 @@
     color: #2c4a7c;
     /* brand DEFAULT (Navy) */
 }
+
+/* Filter button hover fix - prevent hover from affecting active buttons */
+.filter-btn.bg-brand:hover {
+    background-color: #2c4a7c !important;
+    color: white !important;
+}
+
+/* Ensure inactive filter buttons maintain text visibility on hover */
+.filter-btn.bg-white:hover {
+    background-color: #f9fafb !important;
+    color: #4b5563 !important;
+    border-color: #d1d5db !important;
+}
