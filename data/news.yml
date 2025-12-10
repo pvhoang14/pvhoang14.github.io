@@ -1,0 +1,20 @@
+config:
+  minVisible: 5
+
+items:
+  - date: "Jan 2026"
+    content: "Started PhD at <strong>Nanyang Technological University (NTU), Singapore</strong>! 🇸🇬"
+    highlighted: true
+  - date: "May 2025"
+    content: "Paper accepted to <strong>ACL 2025 Findings</strong>."
+    highlighted: false
+  - date: "Mar 2025"
+    content: "Paper accepted to <strong>NAACL 2025</strong> (Main Conference)."
+    highlighted: false
+  - date: "Sep 2024"
+    content: "Graduated from <strong>Hanoi University of Science and Technology</strong> with B.Sc. in Computer Science."
+    highlighted: false
+  - date: "Nov 2023"
+    content: "Joined <strong>Viettel AI</strong> as an AI Researcher."
+    highlighted: false
+    hidden: false

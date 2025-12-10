@@ -1,0 +1,27 @@
+education:
+  - institution: "Nanyang Technological University (NTU)"
+    degree: "PhD Student in Computer Science"
+    period: "Jan 2026 - Present"
+    details: "Research focus: Trustworthy LLMs, Neuro-symbolic AI."
+    highlighted: true
+  - institution: "Hanoi University of Science and Technology (HUST)"
+    degree: "B.Sc. in Computer Science"
+    period: "Sep 2020 - Sep 2024"
+    # details:
+    # - "GPA: 3.75/4.0 (Top 5% of Major). Excellent Student Award."
+    # - "Thesis: Continual Learning and Task Retrieval for Fine-tuning LLMs (9.3/10.0)."
+    highlighted: false
+work:
+  - company: "Viettel AI"
+    position: "Artificial Intelligence Researcher"
+    period: "Nov 2023 - Dec 2025"
+    responsibilities:
+      - "Conducted research on reliable, interpretable frameworks integrating LLMs with Knowledge Graphs."
+      - "Spearheaded pre-training and fine-tuning of Vietnamese LLMs (7B to 70B parameters)."
+      - "Developed RAG pipelines for internal enterprise deployment."
+    highlighted: true
+  # - company: "Viettel Group"
+  #   position: "Viettel Digital Talent Residency"
+  #   period: "Apr 2023 - Nov 2023"
+  #   details: 'Intensive training in Data Science & AI. Awarded "Talent Ambassador" (Top 10 Finalist).'
+  #   highlighted: false

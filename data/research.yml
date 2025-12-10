@@ -1,0 +1,23 @@
+projects:
+  - title: "Fact-Check Agents"
+    description: "Developing agent-based frameworks that utilize knowledge graphs to verify complex claims with higher interpretability and accuracy."
+    tag: NLP
+    tagColor: blue
+    links:
+      demo: "#"
+      code: "#"
+    icon: fa-project-diagram
+  - title: "LLM Continual Learning"
+    description: "Investigating methods for continual learning and task retrieval to prevent catastrophic forgetting in fine-tuned Large Language Models."
+    tag: Systems
+    tagColor: green
+    links:
+      code: "#"
+    icon: fa-brain
+openSource:
+  - name: "FactCheck-Bench"
+    description: "Released a benchmark dataset for hallucination detection in low-resource languages."
+    icon: fa-database
+  - name: "Awesome-LLM-Agents"
+    description: "Maintainer of a curated list of papers regarding Agentic workflows in LLMs (1.2k Stars)."
+    icon: fa-code-branch

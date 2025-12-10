@@ -1,0 +1,14 @@
+teaching:
+  - course: "CZ4045: NLP"
+    institution: "Nanyang Technological University"
+    semester: "Fall 2026"
+  - course: "Intro to AI"
+    institution: "Nanyang Technological University"
+    semester: "Spring 2026"
+service:
+  reviewer:
+    - "ACL 2026 (Arr)"
+    - "NeurIPS 2026"
+    - "EMNLP 2025"
+  talks:
+    - '"RAG vs Long Context Windows" - Viettel AI Seminar'

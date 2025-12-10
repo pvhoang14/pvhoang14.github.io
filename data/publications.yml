@@ -1,0 +1,50 @@
+- title: "ClaimPKG: Enhancing Claim Verification via Pseudo-Subgraph Generation with Lightweight Specialized LLM"
+  authors: "Hoang Pham*, Thanh-Do Nguyen*, Khac-Hoai Nam Bui"
+  venue: "Findings of ACL 2025"
+  year: 2025
+  description: "We propose ClaimPKG, a novel framework that enhances claim verification by generating pseudo-subgraphs from knowledge graphs using a lightweight specialized LLM, improving both accuracy and interpretability."
+  tags:
+    - NLP
+    - Graph
+    - Fact-Checking
+  links:
+    pdf: "#"
+    code: "#"
+    bibtex: "#"
+- title: "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation"
+  authors: "Hoang Pham, Thanh-Do Nguyen, Khac-Hoai Nam Bui"
+  venue: "NAACL 2025"
+  year: 2025
+  description: "This work introduces an entity disambiguation enhancement method for complex claim verification by leveraging interactive graph representations, significantly improving verification accuracy for ambiguous claims."
+  tags:
+    - NLP
+    - Graph
+  links:
+    pdf: "#"
+    code: "#"
+    bibtex: "#"
+- title: "Spec-TOD: A Specialized Instruction-Tuned LLM Framework for Efficient Task-Oriented Dialogue Systems"
+  authors: "Quang Vinh Nguyen, Quang-Chieu Nguyen, Hoang Pham, Khac-Hoai Nam Bui"
+  venue: SIGDIAL 2025
+  year: 2025
+  description: "We present Spec-TOD, a specialized instruction-tuning framework designed for efficient task-oriented dialogue systems, achieving better performance with reduced computational requirements."
+  tags:
+    - NLP
+    - Dialogue
+  links:
+    pdf: "#"
+    code: "#"
+    bibtex: "#"
+- title: "Agent-UniRAG: A Trainable Open-Source LLM Agent Framework for Unified Retrieval-Augmented Generation Systems"
+  authors: "Hoang Pham, Thuy-Duong Nguyen, Khac-Hoai Nam Bui"
+  venue: Preprint
+  year: 2024
+  description: "Agent-UniRAG is a unified, trainable framework for building LLM agents with retrieval-augmented generation capabilities, providing a flexible and extensible architecture for various RAG applications."
+  tags:
+    - NLP
+    - Agent
+    - RAG
+  links:
+    pdf: https://arxiv.org/abs/2505.22571
+    code: "#"
+    bibtex: "#"
