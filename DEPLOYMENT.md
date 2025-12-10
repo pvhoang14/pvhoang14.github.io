@@ -10,6 +10,33 @@ This guide will walk you through deploying your personal website to GitHub Pages
 
 ---
 
+## Part 0: Changing Your GitHub Username (Optional)
+
+If you want to use a different username for your GitHub Pages site (e.g., `hoangpham14.github.io` instead of `HoangHoang14.github.io`), you can change your GitHub username:
+
+### How to Change Your GitHub Username
+
+1. **Check if your desired username is available**:
+   - Visit: `https://github.com/YOUR_DESIRED_USERNAME` (replace with your desired username)
+   - If you see a 404 page, the username is available
+   - Or try signing up with that username at [GitHub Signup](https://github.com/signup) to check availability
+
+2. **Change your username**:
+   - Go to GitHub.com → Click your profile picture (top right) → **Settings**
+   - Scroll down to **"Change username"** section
+   - Enter your new desired username
+   - Follow the prompts to confirm
+   - ⚠️ **Note**: Changing your username will:
+     - Update your profile URL
+     - Update all repository URLs (GitHub will redirect old URLs)
+     - You'll need to update remote URLs in your local git repositories
+
+3. **After changing**, proceed with Part 1 below using your new username
+
+**Alternative**: If you prefer to keep your current username, you can use a **custom domain** (see Part 2) to have `hoangpham14.com` instead of `HoangHoang14.github.io`.
+
+---
+
 ## Part 1: Deploying to GitHub Pages
 
 ### Step 1: Create a GitHub Repository
@@ -17,9 +44,13 @@ This guide will walk you through deploying your personal website to GitHub Pages
 1. Go to [GitHub](https://github.com) and sign in
 2. Click the **"+"** icon in the top right corner and select **"New repository"**
 3. Fill in the repository details:
-   - **Repository name**: `your-username.github.io` (replace `your-username` with your GitHub username)
+   - **Repository name**: `your-username.github.io` (replace `your-username` with your **exact** GitHub username)
+     - Example: If your username is `hoangpham14`, name it `hoangpham14.github.io`
      - Example: If your username is `HoangHoang1408`, name it `HoangHoang1408.github.io`
-     - ⚠️ **Important**: The repository name must match this pattern exactly for GitHub Pages to work automatically
+     - ⚠️ **Important**: 
+       - The repository name must match your GitHub username **exactly** (case-sensitive)
+       - You can find your username in the top-right corner of GitHub or in your profile URL
+       - The format must be: `YOUR_USERNAME.github.io` (no spaces, no special characters except hyphens)
    - **Description**: (Optional) "Personal website"
    - **Visibility**: Choose **Public** (required for free GitHub Pages)
    - **DO NOT** initialize with README, .gitignore, or license (you already have files)

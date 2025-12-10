@@ -8,7 +8,7 @@
     - Graph
     - Fact-Checking
   links:
-    pdf: "#"
+    pdf: "https://aclanthology.org/2025.findings-acl.274"
     code: "#"
     bibtex: "#"
 - title: "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation"
@@ -20,7 +20,7 @@
     - NLP
     - Graph
   links:
-    pdf: "#"
+    pdf: "https://aclanthology.org/2025.naacl-long.268"
     code: "#"
     bibtex: "#"
 - title: "Spec-TOD: A Specialized Instruction-Tuned LLM Framework for Efficient Task-Oriented Dialogue Systems"
@@ -32,7 +32,7 @@
     - NLP
     - Dialogue
   links:
-    pdf: "#"
+    pdf: "https://aclanthology.org/2025.sigdial-1.8/"
     code: "#"
     bibtex: "#"
 - title: "Agent-UniRAG: A Trainable Open-Source LLM Agent Framework for Unified Retrieval-Augmented Generation Systems"

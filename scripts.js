@@ -119,21 +119,17 @@ function renderPublications(filter = 'all') {
             const descriptionHtml = pub.description ?
                 `<p class="text-sm text-gray-600 mt-2 leading-relaxed">${pub.description}</p>` : '';
 
-            const bibtexLink = pub.links.bibtex || '#';
-            const bibtexButton = `<a href="${bibtexLink}" class="text-gray-600 hover:text-gray-900 hover:underline px-2 py-1 border border-gray-300 rounded hover:bg-gray-100 transition">BibTeX</a>`;
-
             pubDiv.innerHTML = `
                 <h4 class="text-lg font-medium text-gray-900 leading-tight">${pub.title}</h4>
                 <p class="text-sm text-gray-600 mt-1">${formattedAuthors}</p>
-                <div class="flex items-center gap-3 mt-1">
+                <div class="flex items-center gap-2 mt-1">
                     <span class="text-sm italic text-gray-500">${pub.venue}</span>
                     ${tagsHtml}
                 </div>
                 ${descriptionHtml}
-                <div class="flex gap-3 mt-2 text-xs font-bold font-sans">
-                    <a href="${pub.links.pdf}" class="text-brand hover:underline px-2 py-1 border border-brand rounded hover:bg-brand hover:text-white transition">PDF</a>
-                    <a href="${pub.links.code}" class="text-gray-600 hover:text-gray-900 hover:underline px-2 py-1 border border-gray-300 rounded hover:bg-gray-100 transition">Code</a>
-                    ${bibtexButton}
+                <div class="flex gap-2 mt-2 text-xs font-bold font-sans">
+                    <a href="${pub.links.pdf}" class="text-brand hover:underline px-0.5 py-0.5 border border-brand rounded hover:bg-brand hover:text-white transition">PDF</a>
+                    <a href="${pub.links.code}" class="text-brand hover:underline px-0.5 py-0.5 border border-brand rounded hover:bg-brand hover:text-white transition">Code</a>
                 </div>
             `;
             container.appendChild(pubDiv);
@@ -180,7 +176,7 @@ function renderHome() {
                 <p class="text-gray-500 text-sm italic">${pub.venue}</p>
                 <div class="flex gap-3 text-xs font-semibold">
                     <a href="${pub.links.pdf}" class="text-brand hover:underline">[PDF]</a>
-                    <a href="${pub.links.code}" class="text-gray-600 hover:text-gray-900 hover:underline">[Code]</a>
+                    <a href="${pub.links.code}" class="text-brand hover:underline">[Code]</a>
                 </div>
             </div>
             <p class="text-gray-600 text-sm mt-2">${formattedAuthors}</p>
