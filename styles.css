@@ -16,12 +16,31 @@
     background: #999;
 }
 
+.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
 .nav-item.active {
     color: #2c4a7c;
     /* brand DEFAULT (Navy) */
     border-left: 3px solid #2c4a7c;
     background-color: rgba(44, 74, 124, 0.05);
     font-weight: 700;
+}
+
+.dark .nav-item.active {
+    color: #60a5fa;
+    /* blue-400 */
+    border-left: 3px solid #60a5fa;
+    background-color: rgba(96, 165, 250, 0.1);
 }
 
 .fade-in {
@@ -56,6 +75,11 @@
     border-color: #2c4a7c;
 }
 
+.dark .avatar-container:hover {
+    box-shadow: 0 0 0 3px #60a5fa;
+    border-color: #60a5fa;
+}
+
 .avatar-container:hover .avatar-image {
     transform: scale(1.4);
 }
@@ -70,6 +94,10 @@
     /* brand DEFAULT (Navy) */
 }
 
+.dark .highlight-hover:hover {
+    color: #60a5fa;
+}
+
 /* Filter button hover fix - prevent hover from affecting active buttons */
 .filter-btn.bg-brand:hover {
     background-color: #2c4a7c !important;
@@ -81,4 +109,22 @@
     background-color: #f9fafb !important;
     color: #4b5563 !important;
     border-color: #d1d5db !important;
+}
+
+.dark .filter-btn.bg-white:hover {
+    background-color: #334155 !important;
+    color: #e2e8f0 !important;
+    border-color: #475569 !important;
+}
+
+/* Fix active button in dark mode */
+.dark .filter-btn.bg-brand {
+    background-color: #2563eb !important;
+    /* blue-600 */
+    color: white !important;
+}
+
+.dark .filter-btn.bg-brand:hover {
+    background-color: #1d4ed8 !important;
+    /* blue-700 */
 }

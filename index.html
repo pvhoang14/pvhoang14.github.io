@@ -23,6 +23,7 @@
 
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -44,38 +45,47 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col md:flex-row">
+<body
+    class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col md:flex-row dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300">
 
     <!-- Mobile Header (Visible only on small screens) -->
-    <header class="md:hidden bg-white shadow-sm p-4 sticky top-0 z-50 flex justify-between items-center">
-        <div class="font-heading font-bold text-xl text-gray-900">Hoang Pham</div>
-        <button id="mobile-menu-btn" class="text-gray-600 focus:outline-none">
-            <i class="fas fa-bars text-2xl"></i>
-        </button>
+    <header
+        class="md:hidden bg-white dark:bg-slate-800 shadow-sm p-4 sticky top-0 z-50 flex justify-between items-center transition-colors duration-300">
+        <div class="font-heading font-bold text-xl text-gray-900 dark:text-white">Hoang Pham</div>
+        <div class="flex items-center gap-4">
+            <button id="mobile-theme-toggle" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button id="mobile-menu-btn" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
     </header>
 
     <!-- Sidebar / Navigation -->
     <aside id="sidebar"
-        class="bg-white w-full md:w-[280px] md:h-screen md:fixed md:top-0 md:left-0 border-r border-gray-200 flex flex-col justify-between hidden md:flex z-40 transition-all duration-300">
+        class="bg-white dark:bg-slate-800 w-full md:w-[280px] md:h-screen md:fixed md:top-0 md:left-0 border-r border-gray-200 dark:border-slate-700 flex flex-col justify-between hidden md:flex z-40 transition-all duration-300">
         <div class="p-8 flex flex-col items-center text-center">
             <div
-                class="w-32 h-32 rounded-full overflow-hidden shadow-sm mb-4 bg-gray-200 relative avatar-container group">
+                class="w-32 h-32 rounded-full overflow-hidden shadow-sm mb-4 bg-gray-200 dark:bg-slate-700 relative avatar-container group">
                 <img src="assets/avatar.jpg" alt="Hoang Pham" class="w-full h-full object-cover avatar-image">
             </div>
 
-            <h1 class="text-2xl font-heading font-bold text-gray-900 mb-1">Hoang Pham</h1>
-            <p class="text-sm font-medium text-brand mb-4">Incoming CS Ph.D. Student at Nanyang Technological University
+            <h1 class="text-2xl font-heading font-bold text-gray-900 dark:text-white mb-1">Hoang Pham</h1>
+            <p class="text-sm font-medium text-brand dark:text-blue-400 mb-4">Incoming CS Ph.D. Student at Nanyang
+                Technological University
                 (NTU)</p>
 
-            <div class="flex space-x-3 text-gray-500 mb-6">
-                <a href="mailto:pham0100@e.ntu.edu.sg" class="hover:text-brand transition"><i
+            <div class="flex space-x-3 text-gray-500 dark:text-gray-400 mb-6">
+                <a href="mailto:pham0100@e.ntu.edu.sg" class="hover:text-brand dark:hover:text-blue-400 transition"><i
                         class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/viethoangpham14/" class="hover:text-brand transition"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/HoangHoang1408" class="hover:text-brand transition"><i
-                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/viethoangpham14/"
+                    class="hover:text-brand dark:hover:text-blue-400 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/HoangHoang1408"
+                    class="hover:text-brand dark:hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
                 <a href="https://scholar.google.com/citations?user=mRL6ZCIAAAAJ&hl=en"
-                    class="hover:text-brand transition"><i class="ai ai-google-scholar text-lg"></i></a>
+                    class="hover:text-brand dark:hover:text-blue-400 transition"><i
+                        class="ai ai-google-scholar text-lg"></i></a>
             </div>
         </div>
 
@@ -83,16 +93,16 @@
         <nav class="flex-grow px-4 overflow-y-auto">
             <ul class="space-y-1 cursor-pointer">
                 <li><a href="#home"
-                        class="nav-item block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent active"
+                        class="nav-item block px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-700 hover:text-brand dark:hover:text-blue-400 rounded transition rounded-r-none border-l-4 border-transparent active"
                         onclick="navigate('home')">Home</a></li>
                 <li><a href="#publications"
-                        class="nav-item block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent"
+                        class="nav-item block px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-700 hover:text-brand dark:hover:text-blue-400 rounded transition rounded-r-none border-l-4 border-transparent"
                         onclick="navigate('publications')">Publications</a></li>
                 <!-- <li><a href="#research"
                         class="nav-item block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent"
                         onclick="navigate('research')">Projects</a></li> -->
                 <li><a href="#experience"
-                        class="nav-item block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent"
+                        class="nav-item block px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-700 hover:text-brand dark:hover:text-blue-400 rounded transition rounded-r-none border-l-4 border-transparent"
                         onclick="navigate('experience')">Experience</a></li>
                 <!-- <li><a href="#teaching"
                         class="nav-item block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-brand rounded transition rounded-r-none border-l-4 border-transparent"
@@ -104,13 +114,20 @@
         </nav>
 
         <!-- Footer Contact Info -->
-        <div class="p-6 border-t border-gray-100 text-xs text-gray-500">
-            <p class="mt-2">© 2026 Hoang Pham</p>
+        <div class="p-6 border-t border-gray-100 dark:border-slate-700 flex justify-between items-center">
+            <p class="text-xs text-gray-500 dark:text-gray-400">© 2026 Hoang Pham</p>
         </div>
     </aside>
 
     <!-- Overlay for mobile menu -->
     <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden md:hidden" onclick="toggleMenu()"></div>
+
+    <!-- Desktop Theme Toggle (Floating Top-Right) -->
+    <button id="theme-toggle"
+        class="fixed top-6 right-6 z-50 hidden md:flex items-center justify-center w-12 h-12 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md text-gray-600 dark:text-gray-300 rounded-full shadow-lg hover:shadow-xl hover:scale-110 hover:text-brand dark:hover:text-blue-400 transition-all duration-300 focus:outline-none ring-1 ring-gray-200 dark:ring-slate-700"
+        title="Toggle Dark Mode">
+        <i class="fas fa-moon text-xl"></i>
+    </button>
 
     <!-- Main Content Area -->
     <main class="flex-1 md:ml-[280px] min-h-screen">
@@ -119,34 +136,43 @@
         <section id="home" class="page-section p-6 md:p-8 lg:p-10 max-w-6xl mx-auto">
             <!-- Intro -->
             <div class="mb-8">
-                <h2 class="text-3xl md:text-4xl text-brand font-heading font-bold mb-3">Hello, I'm Hoang Pham.</h2>
-                <p class="text-base md:text-medium text-gray-700 leading-relaxed font-light mb-1">
-                    I will be joining the <strong class="font-bold text-gray-800">College
+                <h2 class="text-3xl md:text-4xl text-brand dark:text-blue-400 font-heading font-bold mb-3">Hello, I'm
+                    Hoang Pham.</h2>
+                <p class="text-base md:text-medium text-gray-700 dark:text-gray-300 leading-relaxed font-light mb-1">
+                    I will be joining the <strong class="font-bold text-gray-800 dark:text-gray-100">College
                         of Computing and Data
-                        Science</strong> at <strong class="font-bold text-gray-800"><a href="https://www.ntu.edu.sg"
-                            class="text-gray-800 hover:text-brand underline" target="_blank" rel="noreferrer">Nanyang
-                            Technological University (NTU)</a></strong> as a <strong class="font-bold text-gray-800">CS
+                        Science</strong> at <strong class="font-bold text-gray-800 dark:text-gray-100"><a
+                            href="https://www.ntu.edu.sg"
+                            class="text-gray-800 dark:text-gray-100 hover:text-brand dark:hover:text-blue-400 underline"
+                            target="_blank" rel="noreferrer">Nanyang
+                            Technological University (NTU)</a></strong> as a <strong
+                        class="font-bold text-gray-800 dark:text-gray-100">CS
                         Ph.D. Student in Spring
                         2026</strong>, under the advisement of <a href="https://tuanluu.github.io"
-                        class="text-gray-800 font-bold hover:text-brand underline" target="_blank"
-                        rel="noreferrer">Prof. Luu Anh Tuan</a>.
+                        class="text-gray-800 dark:text-gray-100 font-bold hover:text-brand dark:hover:text-blue-400 underline"
+                        target="_blank" rel="noreferrer">Prof. Luu Anh Tuan</a>.
                 </p>
-                <p class="text-base md:text-medium text-gray-700 leading-relaxed font-light mb-1">
+                <p class="text-base md:text-medium text-gray-700 dark:text-gray-300 leading-relaxed font-light mb-1">
                     I received my Bachelor's degree in Computer Science
-                    from <a href="https://hust.edu.vn/en/" class="text-gray-800 hover:text-brand hover:underline"
+                    from <a href="https://hust.edu.vn/en/"
+                        class="text-gray-800 dark:text-gray-100 hover:text-brand dark:hover:text-blue-400 hover:underline"
                         target="_blank" rel="noreferrer"><strong
-                            class="font-bold text-gray-800 highlight-hover cursor-pointer underline">Hanoi University of
+                            class="font-bold text-gray-800 dark:text-gray-100 highlight-hover cursor-pointer underline">Hanoi
+                            University of
                             Science and Technology</strong></a>. Before graduate school, I spent three years at
-                    <a href="https://viettelai.vn/en" class="text-gray-800 hover:text-brand hover:underline"
+                    <a href="https://viettelai.vn/en"
+                        class="text-gray-800 dark:text-gray-100 hover:text-brand dark:hover:text-blue-400 hover:underline"
                         target="_blank" rel="noreferrer"><strong
-                            class="font-bold text-gray-800 highlight-hover cursor-pointer underline">Viettel
+                            class="font-bold text-gray-800 dark:text-gray-100 highlight-hover cursor-pointer underline">Viettel
                             AI</strong></a> conducting NLP research, working closely with <a
                         href="https://scholar.google.com/citations?user=hrsoOCcAAAAJ&hl=en"
-                        class="text-gray-800 hover:text-brand" target="_blank" rel="noreferrer"><strong
-                            class="font-bold text-gray-800 highlight-hover cursor-pointer underline">Dr. Bui Khac Hoai
+                        class="text-gray-800 dark:text-gray-100 hover:text-brand dark:hover:text-blue-400"
+                        target="_blank" rel="noreferrer"><strong
+                            class="font-bold text-gray-800 dark:text-gray-100 highlight-hover cursor-pointer underline">Dr.
+                            Bui Khac Hoai
                             Nam</strong></a>.
                 </p>
-                <p class="text-base md:text-medium text-gray-700 leading-relaxed font-light mb-4">
+                <p class="text-base md:text-medium text-gray-700 dark:text-gray-300 leading-relaxed font-light mb-4">
                     My research interests focus on foundation models and their
                     applications, especially interpretable and
                     trustworthy NLP systems that tackle challenges such as outdated knowledge,
@@ -156,11 +182,11 @@
 
                 <div class="flex gap-3">
                     <a href="#publications" onclick="navigate('publications')"
-                        class="px-3 py-1.5 text-sm bg-brand text-white font-bold rounded-lg hover:bg-brand-dark transition shadow-sm hover:shadow-md">
+                        class="px-3 py-1.5 text-sm bg-brand dark:bg-blue-600 text-white font-bold rounded-lg hover:bg-brand-dark dark:hover:bg-blue-700 transition shadow-sm hover:shadow-md">
                         View Publications
                     </a>
                     <a href="assets/cv.pdf" download="cv.pdf"
-                        class="px-3 py-1.5 text-sm bg-white text-gray-800 font-bold rounded-lg border border-gray-300 hover:bg-gray-50 transition shadow-sm">
+                        class="px-3 py-1.5 text-sm bg-white dark:bg-slate-800 text-gray-800 dark:text-gray-200 font-bold rounded-lg border border-gray-300 dark:border-slate-600 hover:bg-gray-50 dark:hover:bg-slate-700 transition shadow-sm">
                         Download CV
                     </a>
                 </div>
@@ -169,14 +195,16 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Selected Publications (Left 2/3) -->
                 <div class="lg:col-span-2">
-                    <h3 class="text-xl text-brand font-heading font-bold mb-4 border-b pb-2">Selected Publications
+                    <h3
+                        class="text-xl text-brand dark:text-blue-400 font-heading font-bold mb-4 border-b dark:border-slate-700 pb-2">
+                        Selected Publications
                     </h3>
                     <div class="space-y-4">
                         <!-- Publications will be dynamically loaded here -->
                     </div>
                     <div class="mt-4">
                         <a href="#publications" onclick="navigate('publications')"
-                            class="text-sm font-bold text-brand hover:text-brand-dark flex items-center">
+                            class="text-sm font-bold text-brand dark:text-blue-400 hover:text-brand-dark dark:hover:text-blue-300 flex items-center">
                             See all publications <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -184,12 +212,15 @@
 
                 <!-- News (Right 1/3) -->
                 <div class="lg:col-span-1">
-                    <h3 class="text-xl text-brand font-heading font-bold mb-4 border-b pb-2">News</h3>
-                    <div class="relative pl-4 border-l-2 border-gray-200 space-y-4" id="news-container">
+                    <h3
+                        class="text-xl text-brand dark:text-blue-400 font-heading font-bold mb-4 border-b dark:border-slate-700 pb-2">
+                        News</h3>
+                    <div class="relative pl-4 border-l-2 border-gray-200 dark:border-slate-700 space-y-4"
+                        id="news-container">
                         <!-- News items will be dynamically loaded here -->
                     </div>
                     <button id="news-toggle" onclick="toggleNews()"
-                        class="mt-3 text-xs font-bold text-gray-500 hover:text-brand focus:outline-none">
+                        class="mt-3 text-xs font-bold text-gray-500 dark:text-gray-400 hover:text-brand dark:hover:text-blue-400 focus:outline-none">
                         Show More
                     </button>
                 </div>
@@ -198,21 +229,21 @@
 
         <!-- SECTION: PUBLICATIONS -->
         <section id="publications" class="page-section hidden p-6 md:p-8 lg:p-10 max-w-6xl mx-auto">
-            <h2 class="text-3xl font-heading font-bold text-gray-900 mb-1">Publications</h2>
+            <h2 class="text-3xl font-heading font-bold text-gray-900 dark:text-white mb-1">Publications</h2>
 
             <!-- Filters -->
             <div class="flex flex-wrap gap-2 mb-6">
                 <button
-                    class="filter-btn px-3 py-1.5 rounded-full text-sm font-semibold bg-brand text-white shadow-sm transition"
+                    class="filter-btn px-3 py-1.5 rounded-full text-sm font-semibold bg-brand dark:bg-blue-600 text-white shadow-sm transition"
                     data-filter="all" onclick="filterPubs('all', this)">All</button>
                 <button
-                    class="filter-btn px-3 py-1.5 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition"
+                    class="filter-btn px-3 py-1.5 rounded-full text-sm font-semibold bg-white dark:bg-slate-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-slate-600 hover:bg-gray-50 dark:hover:bg-slate-700 transition"
                     data-filter="NLP" onclick="filterPubs('NLP', this)">NLP</button>
                 <button
-                    class="filter-btn px-3 py-1.5 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition"
+                    class="filter-btn px-3 py-1.5 rounded-full text-sm font-semibold bg-white dark:bg-slate-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-slate-600 hover:bg-gray-50 dark:hover:bg-slate-700 transition"
                     data-filter="Graph" onclick="filterPubs('Graph', this)">Knowledge Graphs</button>
                 <button
-                    class="filter-btn px-3 py-1.5 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition"
+                    class="filter-btn px-3 py-1.5 rounded-full text-sm font-semibold bg-white dark:bg-slate-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-slate-600 hover:bg-gray-50 dark:hover:bg-slate-700 transition"
                     data-filter="Agent" onclick="filterPubs('Agent', this)">Agents</button>
             </div>
 
@@ -238,9 +269,9 @@
         <!-- SECTION: EXPERIENCE -->
         <section id="experience" class="page-section hidden p-6 md:p-8 lg:p-10 max-w-6xl mx-auto">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-3xl font-heading font-bold text-gray-900">Experience</h2>
+                <h2 class="text-3xl font-heading font-bold text-gray-900 dark:text-white">Experience</h2>
                 <a href="assets/cv.pdf" download="cv.pdf"
-                    class="flex items-center text-brand font-bold text-sm hover:underline">
+                    class="flex items-center text-brand dark:text-blue-400 font-bold text-sm hover:underline">
                     <i class="fas fa-file-pdf mr-2"></i> Download CV
                 </a>
             </div>
@@ -248,22 +279,23 @@
             <div class="space-y-8">
                 <!-- Education -->
                 <div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                        <span class="bg-gray-100 p-2 rounded mr-3"><i
-                                class="fas fa-graduation-cap text-gray-600"></i></span> Education
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-3 flex items-center">
+                        <span class="bg-gray-100 dark:bg-slate-700 p-2 rounded mr-3"><i
+                                class="fas fa-graduation-cap text-gray-600 dark:text-gray-300"></i></span> Education
                     </h3>
-                    <div class="border-l-2 border-gray-200 ml-5">
+                    <div class="border-l-2 border-gray-200 dark:border-slate-700 ml-5">
                         <!-- Education items will be dynamically loaded here -->
                     </div>
                 </div>
 
                 <!-- Work -->
                 <div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                        <span class="bg-gray-100 p-2 rounded mr-3"><i class="fas fa-briefcase text-gray-600"></i></span>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-3 flex items-center">
+                        <span class="bg-gray-100 dark:bg-slate-700 p-2 rounded mr-3"><i
+                                class="fas fa-briefcase text-gray-600 dark:text-gray-300"></i></span>
                         Industry Experience
                     </h3>
-                    <div class="border-l-2 border-gray-200 ml-5 pl-8 space-y-6">
+                    <div class="border-l-2 border-gray-200 dark:border-slate-700 ml-5 pl-8 space-y-6">
                         <!-- Work items will be dynamically loaded here -->
                     </div>
                 </div>
